@@ -1,0 +1,446 @@
+{
+  "leaderboardData": [
+    {
+      "info": {
+        "name": "KLING",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "proprietary"
+      },
+      "validation": {
+        "overall": "4.81",
+        "newton": "1.00",
+        "mass": "0.90",
+        "fluid": "1.00",
+        "penetration": "0.93",
+        "gravity": "0.99",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.95",
+        "frameWise": "0.99",
+        "temporal": "0.97",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "2.32",
+        "level1": "0.99",
+        "level2": "0.68",
+        "level3": "0.65",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "9.10",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "Minimax",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "proprietary"
+      },
+      "validation": {
+        "overall": "4.72",
+        "newton": "1.00",
+        "mass": "0.86",
+        "fluid": "0.99",
+        "penetration": "0.88",
+        "gravity": "0.99",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.92",
+        "frameWise": "0.99",
+        "temporal": "0.93",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "2.28",
+        "level1": "0.98",
+        "level2": "0.67",
+        "level3": "0.63",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "8.92",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "Mochi 1-official",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "proprietary"
+      },
+      "validation": {
+        "overall": "4.80",
+        "newton": "1.00",
+        "mass": "0.88",
+        "fluid": "1.00",
+        "penetration": "0.93",
+        "gravity": "0.99",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.86",
+        "frameWise": "0.97",
+        "temporal": "0.89",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "2.00",
+        "level1": "0.98",
+        "level2": "0.53",
+        "level3": "0.49",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "8.66",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "Runway",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "proprietary"
+      },
+      "validation": {
+        "overall": "4.60",
+        "newton": "1.00",
+        "mass": "0.77",
+        "fluid": "0.98",
+        "penetration": "0.89",
+        "gravity": "0.96",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.86",
+        "frameWise": "0.99",
+        "temporal": "0.87",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "2.17",
+        "level1": "0.98",
+        "level2": "0.61",
+        "level3": "0.57",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "8.64",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "Luma",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "proprietary"
+      },
+      "validation": {
+        "overall": "4.49",
+        "newton": "1.00",
+        "mass": "0.70",
+        "fluid": "0.98",
+        "penetration": "0.87",
+        "gravity": "0.95",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.76",
+        "frameWise": "0.96",
+        "temporal": "0.81",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "1.98",
+        "level1": "1.00",
+        "level2": "0.51",
+        "level3": "0.48",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "8.24",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "Mochi 1",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "open_source"
+      },
+      "validation": {
+        "overall": "4.39",
+        "newton": "0.99",
+        "mass": "0.63",
+        "fluid": "0.99",
+        "penetration": "0.79",
+        "gravity": "0.98",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.45",
+        "frameWise": "0.78",
+        "temporal": "0.68",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "2.06",
+        "level1": "0.96",
+        "level2": "0.58",
+        "level3": "0.52",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "7.91",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "OpenSoraPlan-T2V",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "open_source"
+      },
+      "validation": {
+        "overall": "4.64",
+        "newton": "1.00",
+        "mass": "0.77",
+        "fluid": "0.99",
+        "penetration": "0.91",
+        "gravity": "0.98",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.68",
+        "frameWise": "0.83",
+        "temporal": "0.85",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "1.72",
+        "level1": "0.94",
+        "level2": "0.41",
+        "level3": "0.37",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "8.04",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "CogVideoX-T2V",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "open_source"
+      },
+      "validation": {
+        "overall": "4.27",
+        "newton": "0.99",
+        "mass": "0.58",
+        "fluid": "0.99",
+        "penetration": "0.73",
+        "gravity": "0.98",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.35",
+        "frameWise": "0.75",
+        "temporal": "0.60",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "2.03",
+        "level1": "0.98",
+        "level2": "0.57",
+        "level3": "0.49",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "7.65",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "CogVideoX-I2V",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "open_source"
+      },
+      "validation": {
+        "overall": "4.17",
+        "newton": "1.00",
+        "mass": "0.52",
+        "fluid": "0.99",
+        "penetration": "0.68",
+        "gravity": "0.99",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.12",
+        "frameWise": "0.61",
+        "temporal": "0.52",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "1.78",
+        "level1": "0.94",
+        "level2": "0.44",
+        "level3": "0.40",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "7.08",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "OpenSora-T2V",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "open_source"
+      },
+      "validation": {
+        "overall": "3.88",
+        "newton": "0.98",
+        "mass": "0.30",
+        "fluid": "0.98",
+        "penetration": "0.64",
+        "gravity": "0.97",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "0.69",
+        "frameWise": "0.40",
+        "temporal": "0.29",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "1.61",
+        "level1": "0.91",
+        "level2": "0.38",
+        "level3": "0.32",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "6.17",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "OpenSora-I2V",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "open_source"
+      },
+      "validation": {
+        "overall": "3.85",
+        "newton": "0.98",
+        "mass": "0.22",
+        "fluid": "0.98",
+        "penetration": "0.68",
+        "gravity": "0.98",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "0.55",
+        "frameWise": "0.36",
+        "temporal": "0.18",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "1.42",
+        "level1": "0.84",
+        "level2": "0.31",
+        "level3": "0.27",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "5.82",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "T2V-Turbo",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "open_source"
+      },
+      "validation": {
+        "overall": "4.10",
+        "newton": "0.99",
+        "mass": "0.41",
+        "fluid": "0.99",
+        "penetration": "0.73",
+        "gravity": "0.98",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.08",
+        "frameWise": "0.64",
+        "temporal": "0.44",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "1.37",
+        "level1": "0.88",
+        "level2": "0.27",
+        "level3": "0.23",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "6.56",
+        "source": "worldmodelbench"
+      }
+    },
+    {
+      "info": {
+        "name": "Pandora",
+        "size": "-",
+        "date": "2024-11-15",
+        "type": "open_source"
+      },
+      "validation": {
+        "overall": "4.31",
+        "newton": "1.00",
+        "mass": "0.55",
+        "fluid": "0.98",
+        "penetration": "0.79",
+        "gravity": "0.99",
+        "source": "worldmodelbench"
+      },
+      "test": {
+        "overall": "1.03",
+        "frameWise": "0.49",
+        "temporal": "0.53",
+        "source": "worldmodelbench"
+      },
+      "pro": {
+        "overall": "1.56",
+        "level1": "0.90",
+        "level2": "0.36",
+        "level3": "0.30",
+        "source": "worldmodelbench"
+      },
+      "total": {
+        "overall": "6.90",
+        "source": "worldmodelbench"
+      }
+    }
+  ]
+}

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WorldModelBench</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="https://busuanzi.9420.ltd/js"></script>
+    <script
+      src="https://kit.fontawesome.com/f8ddf9854a.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="A Multi-discipline and Multi-domain Benchmark
+      for Expert World Models"
+    />
+    <meta
+      name="keywords"
+      content="WorldModelBench, World Model, World Model Evaluation, Vision Language Model, Large Language Model, Large Multimodal Model, artificial intelligence, AI, AGI, artificial general intelligence"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      WorldModelBench: Judging Video Generation Models As World Models
+    </title>
+
+    <link rel="icon" href="./static/images/wmb/worldmodelbench_icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/index.css" />
+    <script
+      src="https://kit.fontawesome.com/fff5b27ec1.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://kit.fontawesome.com/eaf1856e6f.js" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> More Research </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://github.com/NVlabs/VILA">
+                <b>NVILA</b>
+                <span style="font-size: 18px; display: inline; margin-left: 5px"
+                  >🔥</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title is-bold">
+                <img
+                  src="static/images/wmb/worldmodelbench_icon.png"
+                  style="width: 1em; vertical-align: middle"
+                  alt="Logo"
+                />
+                <span class="wmb" style="vertical-align: middle"
+                  >WorldModelBench</span
+                >
+              </h1>
+              <h2 class="subtitle is-3 publication-subtitle">
+                A Multi-discipline and Multi-domain Benchmark for Expert World
+                Models
+              </h2>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a
+                    href="https://dachengli1.github.io/"
+                    style="text-decoration: none; color: inherit"
+                    >Dacheng Li*</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://seerkfang.github.io/"
+                    style="text-decoration: none; color: inherit"
+                    >Yunhao Fang*</a
+                  >,
+                </span>
+                <br />
+                <span class="author-block">
+                  <a
+                    href="https://yukangchen.com/"
+                    style="text-decoration: none; color: inherit"
+                    >Yukang Chen</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://andy-yang-1.github.io/"
+                    style="text-decoration: none; color: inherit"
+                    >Shuo Yang</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://shiyicao.com/"
+                    style="text-decoration: none; color: inherit"
+                    >Shiyi Cao</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://people.eecs.berkeley.edu/~wong.justin/"
+                    style="text-decoration: none; color: inherit"
+                    >Justin Wong</a
+                  >,
+                </span>
+                <br />
+                <span class="author-block">
+                  <a
+                    href="https://people.eecs.berkeley.edu/~wong.justin/"
+                    style="text-decoration: none; color: inherit"
+                    >Xiaolong Wang</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://hongxu-yin.github.io/"
+                    style="text-decoration: none; color: inherit"
+                    >Hongxu Yin</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://people.eecs.berkeley.edu/~jegonzal/"
+                    style="text-decoration: none; color: inherit"
+                    >Joseph E. Gonzalez</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://people.eecs.berkeley.edu/~istoica/"
+                    style="text-decoration: none; color: inherit"
+                    >Ion Stoica</a
+                  >,
+                </span>
+                <br />
+                <span class="author-block">
+                  <a
+                    href="https://hanlab.mit.edu/songhan/"
+                    style="text-decoration: none; color: inherit"
+                    >Song Han</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://research.nvidia.com/person/yao-lu-jason"
+                    style="text-decoration: none; color: inherit"
+                    >Yao Lu</a
+                  >
+                </span>
+              </div>
+
+              <br />
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><b>WorldModelBench Team</b></span>
+              </div>
+
+              <br />
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <span style="color: red; font-weight: bold;">Feel free to submit your results to:</span>
+                  <span class="author-block"
+                    ><a href="mailto:worldmodelbench.team@gmail.com"
+                      >worldmodelbench.team@gmail.com</a
+                    >,</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <!-- <span class="author-block">*Core Contributors</span><br /> -->
+                <span class="author-block">Corresponding to:</span>
+                <span class="author-block"
+                  ><a href="mailto:dacheng177@berkeley.edu"
+                    >dacheng177@berkeley.edu</a
+                  >,</span
+                >
+                <span class="author-block"
+                  ><a href="mailto:yuf026@ucsd.edu">yuf026@ucsd.edu</a>,</span
+                >
+                <span class="author-block"
+                  ><a href="mailto:">songhan@mit.edu</a>,</span
+                >
+                <span class="author-block"
+                  ><a href="mailto:">jasonlu@nvidia.com</a></span
+                >
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a
+                      href="https://drive.google.com/drive/folders/1mBBGM1E14JlmXmqRFonlqs76d9uBBZ0T?usp=drive_link"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="https://huggingface.co/datasets/Efficient-Large-Model/worldmodelbench"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon" style="font-size: 18px">🤗</span>
+                      <span>Test Data</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="https://huggingface.co/Efficient-Large-Model/vila-ewm-qwen2-1.5b"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon" style="font-size: 18px">🤗</span>
+                      <span>Judge Model</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="https://github.com/WorldModelBench-Team/WorldModelBench"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Evaluation</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="#leaderboard"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-trophy"></i>
+                      </span>
+                      <span>Leaderboard</span>
+                    </a>
+                  </span>
+                  <!-- <span class="link-block">
+                    <a
+                      href="https://eval.ai/web/challenges/challenge-page/2179/overview"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-medal"></i>
+                      </span>
+                      <span>EvalAI</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="https://twitter.com/xiangyue96/status/1729698316554801358"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon has-text-white">
+                        <i class="fa-brands fa-x-twitter"></i>
+                      </span>
+                      <span>Twitter</span>
+                    </a>
+                  </span> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop has-text-centered">
+        <img
+          src="static/images/wmb/webpage_teaser.png"
+          alt="geometric reasoning"
+          width="90%"
+        />
+        <p>
+          Overview of our <b>WorldModelBench</b>. WorldModelBench introduces
+          <b>three</b> key features to advance video geneartion evaluation: 1)
+          <b>Comprehensive</b> Domains: Spanning <b>7</b> domains and
+          <b>56</b> subdomains, it offers a total of <b>350</b> prompts designed
+          to challenge video generation models; 2) <b>Nuanced</b> World Modeling
+          Criteria: Instruction Following (scored on a 0-3 scale), Common Sense
+          (assessed through temporal coherence and aesthetics), and
+          <b>Physical Adherence</b> (evaluated against 5 physical laws); 3)
+          <b>Multimodal</b> Prompts & <b>Human-Aligned</b> Judge: Support both
+          text and image-based prompts, with evaluation guided by a
+          human-aligned judge.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="margin-bottom: 2vh">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">🔔News</h2>
+            <div class="content has-text-justified">
+              <p>
+                <b
+                  >🔥[2024-12-05] Introducing
+                  <a
+                    href="https://drive.google.com/drive/folders/1mBBGM1E14JlmXmqRFonlqs76d9uBBZ0T?usp=drive_link"
+                    >WorldModelBench</a
+                  >, a comprehensive benchmark for world model capacities'
+                  evaluation! 🚀</b
+                >
+              </p>
+            </div>
+            <h2 class="title is-3">Introduction</h2>
+            <div class="content has-text-justified">
+              <p>
+                We introduce WorldModelBench, a benchmark designed to evaluate
+                the <b>world modeling capabilities</b> of video generation
+                models across <b>7</b> application-driven domains and
+                <b>56</b> subdomains. WorldModelBench offers
+                <b>two key advantages</b>: (1)
+                <b>Detection of nuanced world modeling violations</b>: By
+                incorporating instruction following and physics adherence
+                dimensions, our benchmark detects subtle violations, such as
+                irregular changes in object size that breach the mass
+                conservation law — issues often overlooked by existing
+                benchmarks. (2)
+                <b>Alignment with large-scale human preferences</b>: We
+                crowd-source <b>67K</b> human labels to accurately measure
+                <b>14</b> frontier models. Leveraging these high-quality human
+                annotations, we fine-tune a 2B multimodal judger to automate the
+                evaluation procedure, achieving <b>8.6%</b> higher average
+                accuracy in predicting world modeling violations compared to
+                GPT-4o. We believe WorldModelBench will stimulate the community
+                to build next-generation world models towards expert world
+                simulators.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+      </div>
+    </section>
+
+    <!-- DATASET SECTION -->
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mmmu">
+          <img
+            src="static/images/wmb/worldmodelbench_icon.png"
+            alt="Logo"
+            class="mmmu-logo"
+          />
+          <span class="mmmu">WorldModelBench</span>
+        </h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Overview</h2>
+            <div class="content has-text-justified">
+              <p>
+                We introduce WorldModelBench, a benchmark designed to assess the
+                world modeling capacities of video generation models across
+                <b>multiple disciplines</b> and
+                <b>diverse application domains</b>. This benchmark includes
+                real-world application domains such as Robotics, Driving,
+                Industry, Human Activities, Gaming, Animation, and Natural,
+                along with detailed subdomains illustrated in the figure. Each
+                domain features <b>50</b> carefully curated prompts, comprising
+                a text description and an initial video frame, tailored for
+                video generation. These prompts were meticulously collected by a
+                team of college students (including coauthors) from existing
+                datasets.
+              </p>
+              <div style="width: 60%; margin: auto">
+                <img
+                  src="static/images/wmb/video_categorization.jpg"
+                  alt="algebraic reasoning"
+                  style="width: 100%; height: auto"
+                  class="center"
+                />
+              </div>
+              <br />
+              <p>
+                WorldModelBench is designed to measure three essential
+                capacities in video generation models: Instruction Following,
+                Common Sense, and Physical Adherence. Our aim is to evaluate how
+                well these models can follow the instructions and reflect the
+                real-world physics.
+              </p>
+              <p>
+                Specifically, for <b>Instruction Following</b>, we evaluate
+                whether the objects, subjects and their intended moitons align
+                with the given instructions. For <b>Common Sense</b>, we assess
+                both temporal consistency and overall visual quality. For
+                <b>Physical Adherence</b>, we investigate the <b>5</b> most
+                common physical hallucinations observed in video generation
+                models, as shown in the gallery below.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <div class="carousel results-carousel">
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img
+                    src="static/images/wmb/newton.jpg"
+                    alt="algebraic reasoning"
+                    width="80%"
+                  />
+                  <p>
+                    Newton’s First Law violation: motion without external force
+                  </p>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img
+                    src="static/images/wmb/deformation.png"
+                    alt="arithmetic reasoning"
+                    width="80%"
+                  />
+                  <p>Solid mechanics violation: irregular deformation</p>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img
+                    src="static/images/wmb/fluid.jpg"
+                    alt="arithmetic reasoning"
+                    width="80%"
+                  />
+                  <p>Fluid mechanics violation: unnatural liquid flow</p>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img
+                    src="static/images/wmb/penetration.png"
+                    alt="arithmetic reasoning"
+                    width="80%"
+                  />
+                  <p>
+                    Impenetrability violation: objects intersect unnaturally
+                  </p>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img
+                    src="static/images/wmb/gravity.png"
+                    alt="arithmetic reasoning"
+                    width="80%"
+                  />
+                  <p>Gravity violation: inconsistent behavior under gravity</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
+            <div class="content has-text-justified">
+              <p>
+                To clearly highlight the distinction between our
+                <i>WorldModelBench</i> and other existing benchmarks, we
+                providea detailed comparison in the table below. From the
+                <i>Metrics</i> perspective, prior benchmarks are heavily focused
+                on visual quality and instruction following. In contrast, our
+                benchmark emphasizes assessing video generation based on its
+                adherence to real-world physical laws. Previous benchmarks often
+                rely on implicit representation similarity or sparse human
+                labels. In comparison, our benchmark involves a fine-grained
+                human-aligned judge, ensuring a more precise and reliable
+                assessment of video generation results. This focus on physical
+                accuracy and fine-grained judgment sets WorldModelBench apart.
+              </p>
+              <div class="content has-text-centered">
+                <div style="width: 50%; margin: auto">
+                  <img
+                    src="static/images/wmb/benchmark_comparison.jpg"
+                    alt="algebraic reasoning"
+                    style="width: 100%; height: auto"
+                    class="center"
+                  />
+                  <p>
+                    Comparison of WorldModelBench with other common benchmarks.
+                    WorldModelBench has comprehensive criteria and human-aligned
+                    judge, ensuring robust assessment
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3">Statistics</h2>
+            <div class="carousel results-carousel">
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <div style="width: 60%; margin: auto">
+                    <img
+                      src="static/images/wmb/spearman-overall.jpg"
+                      alt="algebraic reasoning"
+                      style="width: 100%; height: auto"
+                    />
+                    <p>
+                      Frame-wise quality correlation between WorldModelBench and
+                      VBench
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <div style="width: 60%; margin: auto">
+                    <img
+                      src="static/images/wmb/spearman-physics.jpg"
+                      alt="algebraic reasoning"
+                      style="width: 100%; height: auto"
+                    />
+                    <p>
+                      Physics adherence correlation between WorldModelBench and
+                      VBench
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mmmu">Experiment Results</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+            <div class="content has-text-justified">
+              <p>
+                We evaluate various models including LLMs and LMMs. In each
+                type, we consider both closed- and open-source models. Our
+                evaluation is conducted under a zero-shot setting to assess the
+                capability of models to generate accurate answers without
+                fine-tuning or few-shot demonstrations on our benchmark. For all
+                models, we use the default prompt provided by each model for
+                multi-choice or open QA, if available. If models do not provide
+                prompts for task types in MMMU, we conduct prompt engineering on
+                the validation set and use the most effective prompt for the
+                later zero-shot experiment.
+              </p>
+            </div>
+            <br />
+            <div class="model-labels-container">
+              <!-- <span class="leaderboard-label human_expert">Human Expert</span> -->
+              <span class="leaderboard-label open_source">Open-Source</span>
+              <span class="leaderboard-label proprietary">Proprietary</span>
+            </div>
+            <br />
+            <div class="content has-text-centered">
+              <p>
+                Click on Instruction Following, Physics Adherence or Common
+                Sense to expand detailed results.
+              </p>
+            </div>
+            <div class="leaderboard-container">
+              <div class="table-wrapper">
+                <table id="worldmodelbench-table">
+                  <thead>
+                    <tr>
+                      <th
+                        colspan="3"
+                        class="reset-cell clickable"
+                        style="text-align: center"
+                      >
+                        Reset
+                      </th>
+                      <th class="pro-details-cell clickable" colspan="1">
+                        Instruction Following
+                      </th>
+                      <th class="val-details-cell clickable" colspan="1">
+                        Physics Adherence
+                      </th>
+                      <th class="test-details-cell clickable" colspan="1">
+                        Common Sense
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="sortable clickable" data-sort="string">
+                        Name
+                      </th>
+                      <th class="clickable" data-sort="string">Size</th>
+                      <th class="sortable clickable" data-sort="date">Date</th>
+                      <th
+                        class="sortable clickable pro-overall"
+                        data-sort="number"
+                      >
+                        Overall
+                      </th>
+                      <th
+                        class="hidden pro-details sortable clickable"
+                        data-sort="number"
+                      >
+                        Level 1
+                      </th>
+                      <th
+                        class="hidden pro-details sortable clickable"
+                        data-sort="number"
+                      >
+                        Level 2
+                      </th>
+                      <th
+                        class="hidden pro-details sortable clickable"
+                        data-sort="number"
+                      >
+                        Level 3
+                      </th>
+                      <th
+                        class="sortable clickable val-overall"
+                        data-sort="number"
+                      >
+                        Overall
+                      </th>
+                      <th
+                        class="hidden val-details sortable clickable"
+                        data-sort="number"
+                      >
+                        Newton
+                      </th>
+                      <th
+                        class="hidden val-details sortable clickable"
+                        data-sort="number"
+                      >
+                        Deformation
+                      </th>
+                      <th
+                        class="hidden val-details sortable clickable"
+                        data-sort="number"
+                      >
+                        Fluid
+                      </th>
+                      <th
+                        class="hidden val-details sortable clickable"
+                        data-sort="number"
+                      >
+                        Penetration
+                      </th>
+                      <th
+                        class="hidden val-details sortable clickable"
+                        data-sort="number"
+                      >
+                        Gravity
+                      </th>
+                      <th
+                        class="sortable clickable test-overall"
+                        data-sort="number"
+                      >
+                        Overall
+                      </th>
+                      <th
+                        class="hidden test-details sortable clickable"
+                        data-sort="number"
+                      >
+                        Frame-wise
+                      </th>
+                      <th
+                        class="hidden test-details sortable clickable"
+                        data-sort="number"
+                      >
+                        Temporal
+                      </th>
+                      <th
+                        class="sortable clickable total-overall"
+                        data-sort="number"
+                      >
+                        Total Score
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Table body will be populated dynamically -->
+                  </tbody>
+                </table>
+                <p class="test-desc">
+                  Overall results of different models on the WorldModelBench
+                  leaderboard. The best-performing model in each category is
+                  <b>in-bold</b>, and the second best is <u>underlined</u>. *:
+                  results provided by the authors.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- @PAN TODO: bibtex -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3 has-text-centered">BibTeX</h2>
+        <pre><code>
+          @inproceedings{Li2024WorldModelBench,
+            title={WorldModelBench: Judging Video Generation Models As World Models},
+            author={Dacheng Li and Yunhao Fang and Yukang Chen and Shuo Yang and Shiyi Cao and Justin Wong and Xiaolong Wang and Hongxu Yin and Joseph E. Gonzalez and Ion Stoica and Song Han and Yao Lu},
+            booktitle={In Submission},
+            year={2025},
+          }
+    </code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p class="has-text-centered">
+              This website is website adapted from
+              <a href="https://nerfies.github.io/">Nerfies</a> and
+              <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed
+              under a
+              <a
+                rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/"
+                >Creative Commons Attribution-ShareAlike 4.0 International
+                License</a
+              >.
+            </p>
+            <p class="has-text-centered">
+              Total clicks:
+              <span id="busuanzi_page_pv"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
